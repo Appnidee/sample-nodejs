@@ -7,8 +7,8 @@
   "scripts": {
     "devbuild": "npx supervisor ts-node src/build/server.js",
     "dev": "NODE_ENV=local TS_NODE_PROJECT=./tsconfig.json ts-node-dev --inspect=0.0.0.0 --respawn src/server.ts",
-    "prestart": "pm2 start npm -- start",
-    "start": "NODE_ENV=production TS_NODE_PROJECT=./tsconfig.json npx ts-node-dev --inspect=0.0.0.0 --respawn src/server.ts",
+    "prestart": "npm i -g pm2 && npm install pm2 -g && pm2 update",
+    "start": "pm2 start npm -- start && NODE_ENV=production TS_NODE_PROJECT=./tsconfig.json npx ts-node-dev --inspect=0.0.0.0 --respawn src/server.ts",
     "test": "NODE_ENV='test' jest --runInBand",
     "test:debug": "NODE_ENV='test' node --inspect node_modules/.bin/jest --watch --runInBand",
     "test:watch": "NODE_ENV='test' jest --watch --runInBand",
