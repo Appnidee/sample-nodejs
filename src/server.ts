@@ -1,5 +1,11 @@
 import express, {Request, Response} from 'express';
 import { createConnection } from "typeorm";
+//import config from 'config';
+//import routes from './routes';
+//import morgan from 'morgan';
+import helmet from 'helmet';
+//import { routesUtility } from './utils/routes-util';
+const fs = require("fs");
 
 class Server {
 
@@ -7,6 +13,8 @@ class Server {
 
   constructor(){
     this.app = express(); // init the application
+    this.app.use(helmet());
+    this.app.disable('x-powered-by');
     this.configuration();
     this.routes();
   }
@@ -17,8 +25,9 @@ class Server {
    * variables it takes the default port 3000
    */
   public configuration() {
-    this.app.set('port', process.env.PORT || 3001);
+    this.app.set('port', process.env.PORT || 3000);
     this.app.use(express.json());
+   // this.app.use('/api', routes);
   }
 
   /**
@@ -38,9 +47,16 @@ class Server {
 //     });
 
 
+    this.app.get("/api/post", (req: Request, res: Response ) => {
+      console.log(`hello post`);
+      res.send( "This is a post!" );
+    });
 
     this.app.get( "/", (req: Request, res: Response ) => {
+      console.log(`hello. Server is listening ${this.app.get('port')} port. voor me`  + process.env.NODE_ENV);
       res.send( "Hello world!" );
+      
+    
     });
 
   }
@@ -50,7 +66,7 @@ class Server {
    */
   public start(){
     this.app.listen(this.app.get('port'), () => {
-      console.log(`Server is listening ${this.app.get('port')} port.`);
+      console.log(`Server is listeningfor ${this.app.get('port')} port.`+ process.env.NODE_ENV);
     });
   }
 }

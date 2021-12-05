@@ -1,0 +1,6 @@
+{
+    "server": {
+        "host": "localhost:3000",
+        "pwaHost": "dev.winkelvrij.nl"
+    }
+}
