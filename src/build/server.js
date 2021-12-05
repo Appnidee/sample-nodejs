@@ -40,9 +40,17 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var express_1 = __importDefault(require("express"));
+//import config from 'config';
+//import routes from './routes';
+//import morgan from 'morgan';
+var helmet_1 = __importDefault(require("helmet"));
+//import { routesUtility } from './utils/routes-util';
+var fs = require("fs");
 var Server = /** @class */ (function () {
     function Server() {
         this.app = express_1.default(); // init the application
+        this.app.use(helmet_1.default());
+        this.app.disable('x-powered-by');
         this.configuration();
         this.routes();
     }
@@ -52,14 +60,16 @@ var Server = /** @class */ (function () {
      * variables it takes the default port 3000
      */
     Server.prototype.configuration = function () {
-        this.app.set('port', process.env.PORT || 3001);
+        this.app.set('port', process.env.PORT || 3000);
         this.app.use(express_1.default.json());
+        // this.app.use('/api', routes);
     };
     /**
      * Method to configure the routes
      */
     Server.prototype.routes = function () {
         return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
             return __generator(this, function (_a) {
                 //     await createConnection({
                 //       type: "postgres",
@@ -72,7 +82,12 @@ var Server = /** @class */ (function () {
                 //       synchronize: true,
                 //       name: "blog"
                 //     });
+                this.app.get("/api/post", function (req, res) {
+                    console.log("hello post");
+                    res.send("This is a post!");
+                });
                 this.app.get("/", function (req, res) {
+                    console.log("hello. Server is listening " + _this.app.get('port') + " port. voor me");
                     res.send("Hello world!");
                 });
                 return [2 /*return*/];
@@ -85,7 +100,7 @@ var Server = /** @class */ (function () {
     Server.prototype.start = function () {
         var _this = this;
         this.app.listen(this.app.get('port'), function () {
-            console.log("Server is listening " + _this.app.get('port') + " port.");
+            console.log("Server is listeningfor " + _this.app.get('port') + " port.");
         });
     };
     return Server;

@@ -1,0 +1,6 @@
+{
+    "server": {
+        "host": "https://sample-nodejs-hmbsc.ondigitalocean.app/",
+        "pwaHost": "winkelvrij.nl"
+    }
+}
