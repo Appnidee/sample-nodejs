@@ -55,6 +55,7 @@ var Server = /** @class */ (function () {
         this.app.set('port', process.env.PORT || 3001);
         this.app.use(express_1.default.json());
     };
+    //hhhhelllo
     /**
      * Method to configure the routes
      */

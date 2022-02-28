@@ -54,7 +54,7 @@ class Server {
 
     this.app.get( "/", (req: Request, res: Response ) => {
       console.log(`hello. Server is listening ${this.app.get('port')} port. voor me`  + process.env.NODE_ENV);
-      res.send( "Hello world!" );
+      res.send( "Hello world! "+process.env.NODE_ENV );
       
     
     });

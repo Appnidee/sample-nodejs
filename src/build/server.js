@@ -87,8 +87,8 @@ var Server = /** @class */ (function () {
                     res.send("This is a post!");
                 });
                 this.app.get("/", function (req, res) {
-                    console.log("hello. Server is listening " + _this.app.get('port') + " port. voor me");
-                    res.send("Hello world!");
+                    console.log("hello. Server is listening " + _this.app.get('port') + " port. voor me" + process.env.NODE_ENV);
+                    res.send("Hello world! " + process.env.NODE_ENV);
                 });
                 return [2 /*return*/];
             });
@@ -100,7 +100,7 @@ var Server = /** @class */ (function () {
     Server.prototype.start = function () {
         var _this = this;
         this.app.listen(this.app.get('port'), function () {
-            console.log("Server is listeningfor " + _this.app.get('port') + " port.");
+            console.log("Server is listeningfor " + _this.app.get('port') + " port." + process.env.NODE_ENV);
         });
     };
     return Server;

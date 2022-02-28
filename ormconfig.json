@@ -1,0 +1,63 @@
+[
+    {
+        "name": "local",
+        "type": "mysql",
+        "port": 3306,
+        "username": "root",
+        "password": "mfactuur",
+        "database": "winkelvrij",
+        "entities": ["./src/models/**/*.ts","./src/types/**/*.ts"],
+        "synchronize": true,
+        "insecureAuth": true,
+        "legacySpatialSupport": false
+    },
+    {
+        "name": "development",
+        "type": "mysql",
+        "host": "mysql",
+        "port": 3306,
+        "username": "root",
+        "password": "12w-i-n-kHAR!D-elTOvrGUij34!",
+        "database": "winkelvrij",
+        "entities": ["./src/models/**/*.ts"],
+        "synchronize": true,
+        "legacySpatialSupport": false
+    },
+    {
+        "name": "production",
+        "type": "mysql",
+        "host": "db-mysql-ams3-50323-do-user-7666239-0.a.db.ondigitalocean.com",
+        "port": 25060,
+        "username": "prod-connect",
+        "password": "Mfactuur22@",
+        "database": "winkelvrij",
+        "entities": ["./src/models/**/*.ts"],
+        "sslmode": "REQUIRED",
+        "synchronize": true,
+        "legacySpatialSupport": false
+    },
+    {
+        "name": "test",
+        "type": "mysql",
+        "port": 3306,
+        "username": "root",
+        "password": "Mfactuur22@",
+        "database": "winkelvrij_test",
+        "entities": ["./src/models/**/*.ts"],
+        "dropSchema": true,
+        "synchronize": true,
+        "legacySpatialSupport": false
+    },
+    {
+        "name": "ci",
+        "type": "mysql",
+        "port": 3306,
+        "username": "root",
+        "password": "test",
+        "database": "winkelvrij_ci",
+        "entities": ["./src/models/**/*.ts"],
+        "dropSchema": true,
+        "synchronize": true,
+        "legacySpatialSupport": false
+    }
+]

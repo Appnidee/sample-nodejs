@@ -1,0 +1,9 @@
+{
+    "git.ignoreLimitWarning": true,
+
+//"typescript.tsdk": "C:\\Users\\Appni\\AppData\\Roaming\\npm\\node_modules\\typescript\\lib"
+            
+//"typescript.tsdk": "node_modules/typescript/lib"
+
+
+  }
