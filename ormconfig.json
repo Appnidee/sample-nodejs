@@ -17,7 +17,7 @@
         "host": "postgres",
         "port": 5432,
         "username": "postgres",
-        "password": "12w-i-n-kHAR!D-elTOvrGUij34!",
+        "password": "mfactuur",
         "database": "shopspeeder",
         "entities": ["./src/models/**/*.ts"],
         "synchronize": true,
