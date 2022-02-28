@@ -7,7 +7,7 @@
      const PORT = 3000
      app.use(express.json())
      app.get("/", (req, res) => {
-       res.send("Hello World Appnidee")
+       res.send("Hello World Appnidee and the rsest")
      })
      app.listen(PORT, () => {
        console.log(`Server is listening on port ${PORT}`)
