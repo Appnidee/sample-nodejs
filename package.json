@@ -21,7 +21,7 @@
     "mersenne-twister": "^1.1.0",
     "morgan": "~1.9.1",
     "nodemon": "^2.0.15",
-    "pug": "^2.0.4",
+    "pug": "^3.0.2",
     "uglify-js": "^2.6.0"
   }
 }
