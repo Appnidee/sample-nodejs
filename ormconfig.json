@@ -1,0 +1,40 @@
+[
+    {
+        "name": "local",
+        "type": "postgres",
+        "port": 5432,
+        "username": "postgres",
+        "password": "mfactuur",
+        "database": "shopspeeder",
+        "entities": ["./src/models/**/*.ts"],
+        "synchronize": true,
+        "insecureAuth": true,
+        "legacySpatialSupport": false
+    },
+    {
+        "name": "development",
+        "type": "postgres",
+        "host": "postgres",
+        "port": 5432,
+        "username": "postgres",
+        "password": "12w-i-n-kHAR!D-elTOvrGUij34!",
+        "database": "shopspeeder",
+        "entities": ["./src/models/**/*.ts"],
+        "synchronize": true,
+        "legacySpatialSupport": false
+    },
+    {
+        "name": "production",
+        "type": "mysql",
+        "host": "db-mysql-ams3-50323-do-user-7666239-0.a.db.ondigitalocean.com",
+        "port": 25060,
+        "username": "prod-connect",
+        "password": "k4xkq38j684ecycb",
+        "database": "winkelvrij",
+        "entities": ["./src/models/**/*.ts"],
+        "sslmode": "REQUIRED",
+        "synchronize": true,
+        "legacySpatialSupport": false
+    }
+
+]
