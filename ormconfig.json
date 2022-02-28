@@ -35,29 +35,5 @@
         "sslmode": "REQUIRED",
         "synchronize": true,
         "legacySpatialSupport": false
-    },
-    {
-        "name": "test",
-        "type": "mysql",
-        "port": 3306,
-        "username": "root",
-        "password": "Mfactuur22@",
-        "database": "winkelvrij_test",
-        "entities": ["./src/models/**/*.ts"],
-        "dropSchema": true,
-        "synchronize": true,
-        "legacySpatialSupport": false
-    },
-    {
-        "name": "ci",
-        "type": "mysql",
-        "port": 3306,
-        "username": "root",
-        "password": "test",
-        "database": "winkelvrij_ci",
-        "entities": ["./src/models/**/*.ts"],
-        "dropSchema": true,
-        "synchronize": true,
-        "legacySpatialSupport": false
     }
 ]
